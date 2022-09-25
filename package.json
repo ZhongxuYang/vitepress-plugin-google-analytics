@@ -17,6 +17,11 @@
       "require": "./dist/index.cjs"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZhongxuYang/vitepress-plugin-google-analytics.git"
+  },
+  "homepage": "https://github.com/ZhongxuYang/vitepress-plugin-google-analytics.git",
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "files": [

@@ -26,7 +26,7 @@ export const config = {
 import googleAnalytics from 'vitepress-plugin-google-analytics'
 
 export default {
-  enhanceApp: async (ctx) => {
+  enhanceApp: (ctx) => {
     googleAnalytics(ctx)
   }
 }

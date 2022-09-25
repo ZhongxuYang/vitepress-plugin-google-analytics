@@ -1,7 +1,7 @@
 import type { EnhanceAppContext } from 'vitepress'
 
 /* global GA_ID, ga */
-export default ({ router, siteData }) => {
+export default ({ router, siteData, app }) => {
   const { googleAnalytics = {} } = siteData?.value?.themeConfig
   const GA_ID = googleAnalytics.ga || false
 
