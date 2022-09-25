@@ -1,0 +1,34 @@
+{
+  "name": "vitepress-plugin-google-analytics",
+  "version": "1.0.0",
+  "description": "google-analytics plugin for vitepress",
+  "keywords": [
+    "documentation",
+    "generator",
+    "vue",
+    "vitepress"
+  ],
+  "author": "ZhongxuYang <himatthew@foxmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.21",
+    "typescript": "^4.8.3",
+    "unbuild": "^0.8.11",
+    "vitepress": "^1.0.0-alpha.16"
+  }
+}
