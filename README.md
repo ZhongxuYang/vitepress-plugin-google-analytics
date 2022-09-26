@@ -3,6 +3,11 @@
 > Google analytics plugin for Vitepress
 
 <p align="center">
+  <a href="https://github.com/ZhongxuYang/vitepress-plugin-google-analytics.git" target="_blank" rel="noopener noreferrer">
+    <img width="180" src="./public/ic_analytics.svg" alt="vitepress-plugin-google-analytics logo">
+  </a>
+</p>
+<p align="center">
   <img src="https://img.shields.io/npm/dm/vitepress-plugin-google-analytics.svg" alt="Downloads"></a>
   <a href="https://www.npmjs.com/package/vitepress-plugin-google-analytics"><img src="https://img.shields.io/npm/v/vitepress-plugin-google-analytics.svg" alt="Version"></a>
   <a href="https://github.com/vuejs/vitepress-plugin-google-analytics/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/vitepress-plugin-google-analytics.svg" alt="License"></a>
