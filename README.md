@@ -1,9 +1,9 @@
 # vitepress-plugin-google-analytics
 
-> Google analytics plugin
+> Google analytics plugin for Vitepress
 
 <p align="center">
- <!-- <img src="https://img.shields.io/npm/dm/vitepress-plugin-google-analytics.svg" alt="Downloads"></a> -->
+  <img src="https://img.shields.io/npm/dm/vitepress-plugin-google-analytics.svg" alt="Downloads"></a>
   <a href="https://www.npmjs.com/package/vitepress-plugin-google-analytics"><img src="https://img.shields.io/npm/v/vitepress-plugin-google-analytics.svg" alt="Version"></a>
   <a href="https://github.com/vuejs/vitepress-plugin-google-analytics/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/vitepress-plugin-google-analytics.svg" alt="License"></a>
 </p>
