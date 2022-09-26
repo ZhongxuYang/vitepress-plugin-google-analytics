@@ -1,39 +1,36 @@
-import type { EnhanceAppContext } from 'vitepress'
+declare const dataLayer: any[]
+declare const gtag: (...args: any[]) => void
+declare global {
+  interface Window {
+    dataLayer?: typeof dataLayer
+    gtag?: typeof gtag
+}
+}
 
+const mountGoogleAnalytics = (id: string) => {
+  // avoid duplicated import
+  if (window.dataLayer && window.gtag) {
+    return
+  }
+  
+  // insert gtag `<script>` tag
+  const gtagScript = document.createElement('script')
+  gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${id}`
+  gtagScript.async = true
+  document.head.appendChild(gtagScript)
+  // insert gtag snippet
+  window.dataLayer = window.dataLayer || []
+  // the gtag function must use `arguments` object to forward parameters
+  window.gtag = function () {
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date())
+  gtag('config', id)
+}
 /* global GA_ID, ga */
-export default ({ router, siteData, app }) => {
-  const { googleAnalytics = {} } = siteData?.value?.themeConfig
-  const GA_ID = googleAnalytics.ga || false
-
+export default ({id}) => {
   // Google analytics integration
-  if (process.env.NODE_ENV === 'production' && GA_ID && typeof window !== 'undefined') {
-    const scriptEl = (function (i, s, o, g, r, a?: HTMLScriptElement, m?: HTMLElement) {
-      i['GoogleAnalyticsObject'] = r
-      i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }
-      i[r].l = Number(new Date())
-      a = s.createElement(o) as HTMLScriptElement
-      m = s.getElementsByTagName(o)[0] as HTMLScriptElement
-      a.async = true
-      a.src = g
-      m!.parentNode!.insertBefore(a, m)
-      return a
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga')
-
-    scriptEl.onload = () => {
-      window['ga']('create', GA_ID, 'auto')
-      window['ga']('set', 'anonymizeIp', true)
-    }
-
-    setTimeout(() => {
-      const originalRouteHook = router.onAfterRouteChanged
-      router.onAfterRouteChanged = (to) => {
-        originalRouteHook?.(to)
-
-        window['ga']('set', 'page', to)
-        window['ga']('send', 'pageview')
-      }
-    })
+  if (process.env.NODE_ENV === 'production' && id && typeof window !== 'undefined') {
+    mountGoogleAnalytics(id)
   }
 }

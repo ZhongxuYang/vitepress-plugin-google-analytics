@@ -4,6 +4,7 @@
   "description": "google-analytics plugin for vitepress",
   "keywords": [
     "documentation",
+    "google",
     "generator",
     "vue",
     "vitepress"

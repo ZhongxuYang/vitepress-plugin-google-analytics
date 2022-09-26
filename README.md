@@ -16,24 +16,15 @@ yarn add -D vitepress-plugin-google-analytics
 
 ## Usage
 ```ts
-// .vitepress/config.ts
-
-export const config = {
-  themeConfig: {
-    googleAnalytics: {
-      ga: '*********', // Your GoogleAnalytics ID
-    },
-  }
-}
-```
-
-```ts
 // .vitepress/theme/index.ts
+
 import googleAnalytics from 'vitepress-plugin-google-analytics'
 
 export default {
   enhanceApp: (ctx) => {
-    googleAnalytics(ctx)
+    googleAnalytics({
+      id: 'G-******', // Replace with your GoogleAnalytics ID, which should start with the 'G-'
+    })
   }
 }
 ```
